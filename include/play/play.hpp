@@ -21,7 +21,7 @@ namespace Strategy
 
   public:
     unsigned int recvrID,pasrID;  //for the plays which use a passer and a receiver
-    virtual void updateParam()=0;
+    virtual void updateParam() = 0;
     enum Result
     {
       SUCCESS,

@@ -7,6 +7,7 @@
 #include "pSetPosition.hpp"
 #include "pPassTest.hpp"
 #include "pTestPlay.hpp"
+#include "refPlays.hpp"
 
 namespace Strategy
 {
@@ -32,6 +33,9 @@ namespace Strategy
     playList[PlayBook::SetPosition]           = new PSetPosition(state);
     playList[PlayBook::TestPlay]           = new PTestPlay(state);
     playList[PlayBook::PassTest]           = new PPassTest(state);
+
+    //Referee Plays
+    playList[PlayBook::Halt]              =   new HaltRP(state);
     //playList[PlayBook::OffensePlay]           = new POffensePlay(state); 
     //playList[PlayBook::DefensiveGoToGoal]     = new PDefensiveGoToGoal(state);
     
