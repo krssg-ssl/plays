@@ -20,7 +20,9 @@ namespace Strategy
       None,
       SetPosition, 
       PassTest, 
-      TestPlay, 
+      TestPlay,
+      // Referee Plays
+      Halt,
       MAX_PLAYS
     };
 

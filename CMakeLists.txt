@@ -204,5 +204,5 @@ include_directories(
 
 include_directories(include include/play ${catkin_INCLUDE_DIRS})
 
-add_executable(play_node src/pmain.cpp src/comdef.cpp src/expPS.cpp src/naivePS.cpp src/pExec.cpp src/playBook.cpp src/ps.cpp src/robot.cpp src/pPassTest.cpp)
+add_executable(play_node src/pmain.cpp src/comdef.cpp src/expPS.cpp src/naivePS.cpp src/pExec.cpp src/playBook.cpp src/ps.cpp src/robot.cpp src/pPassTest.cpp src/refPlays.cpp)
 target_link_libraries(play_node ${catkin_LIBRARIES})
