@@ -31,11 +31,17 @@ namespace Strategy
     // Inserting all the name-object pairs into the  Play List
     playList[PlayBook::None]                  = new PNone(state);
     playList[PlayBook::SetPosition]           = new PSetPosition(state);
-    playList[PlayBook::TestPlay]           = new PTestPlay(state);
-    playList[PlayBook::PassTest]           = new PPassTest(state);
+    playList[PlayBook::TestPlay]              = new PTestPlay(state);
+    playList[PlayBook::PassTest]              = new PPassTest(state);
 
     //Referee Plays
-    playList[PlayBook::Halt]              =   new HaltRP(state);
+    playList[PlayBook::Halt]                  = new HaltRP(state);
+    playList[PlayBook::TimeoutYellow]         = new TimeoutYellowRP(state);
+    playList[PlayBook::TimeoutBlue]           = new TimeoutBlueRP(state);
+    playList[PlayBook::GoalYellow]            = new GoalYellowRP(state);
+    playList[PlayBook::GoalBlue]              = new GoalBlueRP(state);
+    playList[PlayBook::BallPlacementYellow]   = new BallPlacementYellowRP(state);
+    playList[PlayBook::BallPlacementBlue]     = new BallPlacementBlueRP(state);
     //playList[PlayBook::OffensePlay]           = new POffensePlay(state); 
     //playList[PlayBook::DefensiveGoToGoal]     = new PDefensiveGoToGoal(state);
     

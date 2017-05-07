@@ -23,6 +23,12 @@ namespace Strategy
       TestPlay,
       // Referee Plays
       Halt,
+      TimeoutYellow,
+      TimeoutBlue,
+      GoalYellow,
+      GoalBlue,
+      BallPlacementYellow,
+      BallPlacementBlue,
       MAX_PLAYS
     };
 

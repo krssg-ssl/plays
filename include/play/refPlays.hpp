@@ -1,6 +1,6 @@
 #include "play.hpp"
 
-namespace Strategy{
+namespace Strategy {
 
 	enum Stage {
 		// The first half is about to start.
@@ -147,26 +147,61 @@ namespace Strategy{
 	};
 
 	class TimeoutYellowRP : public RefereePlay {
+	public:
+		TimeoutYellowRP(const krssg_ssl_msgs::BeliefState& state);
+ 		~TimeoutYellowRP() {}
+ 		inline bool applicable(void) { return false; }
+ 		inline Result done(void) const{ return COMPLETED; }
+ 		void updateParam();
 
 	};
 
 	class TimeoutBlueRP : public RefereePlay {
+	public:
+		TimeoutBlueRP(const krssg_ssl_msgs::BeliefState& state);
+ 		~TimeoutBlueRP() {}
+ 		inline bool applicable(void) { return false; }
+ 		inline Result done(void) const{ return COMPLETED; }
+ 		void updateParam();
 
 	};
 
 	class GoalYellowRP : public RefereePlay {
+	public:
+		GoalYellowRP(const krssg_ssl_msgs::BeliefState& state);
+		~GoalYellowRP(){}
+		inline bool applicable(void) {return false;}
+        inline Result done(void) const{return COMPLETED;}
+		void updateParam();
 
 	};
 
 	class GoalBlueRP : public RefereePlay {
+	public:
+		GoalBlueRP(const krssg_ssl_msgs::BeliefState& state);
+ 		~GoalBlueRP() {}
+ 		inline bool applicable(void) { return false; }
+ 		inline Result done(void) const{ return COMPLETED; }
+ 		void updateParam();
 
 	};
 
 	class BallPlacementYellowRP : public RefereePlay {
-
+	public:
+		BallPlacementYellowRP(const krssg_ssl_msgs::BeliefState& state);
+ 		~BallPlacementYellowRP() {}
+ 		inline bool applicable(void) { return false; }
+ 		inline Result done(void) const{ return COMPLETED; }
+ 		void updateParam();
 	};
 
 	class BallPlacementBlueRP : public RefereePlay {
+	public:
+		BallPlacementBlueRP(const krssg_ssl_msgs::BeliefState& state);
+ 		~BallPlacementBlueRP() {}
+ 		inline bool applicable(void) { return false; }
+ 		inline Result done(void) const{ return COMPLETED; }
+ 		void updateParam();
 
 	};
 }
