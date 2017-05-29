@@ -16,7 +16,16 @@ find_package(catkin REQUIRED COMPONENTS
   robojackets
 )
 
-set(CMAKE_CXX_COMPILER /usr/bin/g++-4.9)
+execute_process (
+    COMMAND bash -c "lsb_release -sr"
+    OUTPUT_VARIABLE UBUNTU_VERSION
+)
+if ("${UBUNTU_VERSION}" EQUAL "14.04")
+  set(CMAKE_CXX_COMPILER /usr/bin/g++-4.9)
+else("${UBUNTU_VERSION}" EQUAL "14.04")
+  set(CMAKE_CXX_COMPILER /usr/bin/clang)
+endif("${UBUNTU_VERSION}" EQUAL "14.04")
+
 set(CMAKE_C_COMPILER /usr/bin/gcc-4.9)
 
 message("compiler = " "${CMAKE_CXX_COMPILER}")
