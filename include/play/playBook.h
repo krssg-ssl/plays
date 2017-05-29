@@ -6,37 +6,43 @@
 // Forward Declarations
 namespace Strategy
 {
-  class BeliefState;
-  class Play;
+class BeliefState;
+class Play;
 }
 
 namespace Strategy
 {
-  class PlayBook
+class PlayBook
+{
+public:
+  enum PlayID
   {
-  public:
-    enum PlayID
-    {
-      None,
-      SetPosition, 
-      PassTest, 
-      TestPlay,
-      // Referee Plays
-      Halt,
-      MAX_PLAYS
-    };
+    None,
+    SetPosition,
+    PassTest,
+    TestPlay,
+    // Referee Plays
+    Halt,
+    TimeoutYellow,
+    TimeoutBlue,
+    GoalYellow,
+    GoalBlue,
+    BallPlacementYellow,
+    BallPlacementBlue,
+    MAX_PLAYS
+  };
 
-  protected:
-    const krssg_ssl_msgs::BeliefState& state;
-    Play*              playList[MAX_PLAYS];
+protected:
+  const krssg_ssl_msgs::BeliefState& state;
+  Play*              playList[MAX_PLAYS];
 
-  public:
-    PlayBook(const krssg_ssl_msgs::BeliefState& state);
-    
-    ~PlayBook();
+public:
+  PlayBook(const krssg_ssl_msgs::BeliefState& state);
 
-    void reload(void);
-  }; // class PlayBook
+  ~PlayBook();
+
+  void reload(void);
+}; // class PlayBook
 } // namespace Strategy
 
 #endif // PLAY_BOOK_H
